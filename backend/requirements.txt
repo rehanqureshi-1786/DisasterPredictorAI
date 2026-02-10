@@ -1,0 +1,11 @@
+flask
+flask-cors
+pandas
+joblib
+requests
+twilio
+scikit-learn
+numpy
+pyopenssl
+python-dotenv
+gunicorn

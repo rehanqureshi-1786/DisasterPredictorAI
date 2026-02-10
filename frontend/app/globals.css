@@ -1,0 +1,233 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light theme – modern, professional palette */
+  --background: oklch(1 0 0);
+  /* Pure white background */
+  --foreground: oklch(0.22 0.03 262);
+  /* dark slate text */
+  --card: oklch(0.985 0.01 260);
+  /* Very light bluish card */
+  --card-foreground: oklch(0.22 0.03 262);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 262);
+
+  /* Primary buttons/accents – deep, professional blue */
+  --primary: oklch(0.56 0.18 255);
+  /* rich royal blue */
+  --primary-foreground: oklch(0.985 0 0);
+  /* white text on primary */
+
+  /* Secondary surfaces – soft blue/gray */
+  --secondary: oklch(0.96 0.03 240);
+  /* light bluish card background */
+  --secondary-foreground: oklch(0.27 0.04 250);
+  /* darker blue text */
+
+  /* Muted text & backgrounds */
+  --muted: oklch(0.96 0.01 260);
+  --muted-foreground: oklch(0.55 0.03 260);
+
+  /* Accent – calm teal for subtle highlights */
+  --accent: oklch(0.8 0.08 170);
+  /* medium teal, less “light green” */
+  --accent-foreground: oklch(0.26 0.06 170);
+
+  /* Destructive – red */
+  --destructive: oklch(0.65 0.18 28);
+  --destructive-foreground: oklch(0.99 0.02 20);
+
+  /* Borders / inputs / focus rings */
+  --border: oklch(0.9 0.02 260);
+  --input: oklch(0.9 0.02 260);
+  --ring: oklch(0.72 0.04 260);
+
+  /* Charts */
+  --chart-1: oklch(0.56 0.18 255);
+  /* blue */
+  --chart-2: oklch(0.65 0.11 190);
+  /* teal */
+  --chart-3: oklch(0.72 0.14 120);
+  /* lime */
+  --chart-4: oklch(0.78 0.16 50);
+  /* amber */
+  --chart-5: oklch(0.7 0.17 12);
+  /* orange/red */
+
+  --radius: 0.75rem;
+
+  /* Sidebar light theme */
+  --sidebar: oklch(0.98 0.01 260);
+  --sidebar-foreground: oklch(0.22 0.03 262);
+  --sidebar-primary: oklch(0.56 0.18 255);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.96 0.03 240);
+  --sidebar-accent-foreground: oklch(0.27 0.04 250);
+  --sidebar-border: oklch(0.9 0.02 260);
+  --sidebar-ring: oklch(0.72 0.04 260);
+}
+
+.dark {
+  /* Dark theme tuned to match the new professional blue/teal palette */
+  --background: oklch(0.16 0.03 255);
+  --foreground: oklch(0.96 0.01 260);
+  --card: oklch(0.18 0.03 255);
+  --card-foreground: oklch(0.96 0.01 260);
+  --popover: oklch(0.18 0.03 255);
+  --popover-foreground: oklch(0.96 0.01 260);
+
+  --primary: oklch(0.7 0.17 255);
+  /* brighter blue for dark bg */
+  --primary-foreground: oklch(0.16 0.03 255);
+
+  --secondary: oklch(0.24 0.03 255);
+  --secondary-foreground: oklch(0.96 0.01 260);
+
+  --muted: oklch(0.24 0.02 260);
+  --muted-foreground: oklch(0.7 0.02 260);
+
+  --accent: oklch(0.7 0.09 180);
+  /* teal accent on dark */
+  --accent-foreground: oklch(0.16 0.04 190);
+
+  --destructive: oklch(0.48 0.16 28);
+  --destructive-foreground: oklch(0.96 0.02 20);
+
+  --border: oklch(0.28 0.03 260);
+  --input: oklch(0.28 0.03 260);
+  --ring: oklch(0.6 0.05 255);
+
+  --chart-1: oklch(0.7 0.17 255);
+  --chart-2: oklch(0.7 0.09 180);
+  --chart-3: oklch(0.76 0.12 120);
+  --chart-4: oklch(0.78 0.16 50);
+  --chart-5: oklch(0.74 0.17 12);
+
+  --sidebar: oklch(0.18 0.03 255);
+  --sidebar-foreground: oklch(0.96 0.01 260);
+  --sidebar-primary: oklch(0.7 0.17 255);
+  --sidebar-primary-foreground: oklch(0.16 0.03 255);
+  --sidebar-accent: oklch(0.24 0.03 255);
+  --sidebar-accent-foreground: oklch(0.96 0.01 260);
+  --sidebar-border: oklch(0.28 0.03 260);
+  --sidebar-ring: oklch(0.6 0.05 255);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-card/30 border border-border/20 rounded-xl;
+  }
+
+  .glass-card-dark {
+    /* Light theme: bright, elevated white card
+       Dark theme: keep the existing dark glass look */
+    @apply backdrop-blur-xl rounded-xl bg-white/90 border border-slate-200 dark:bg-black/20 dark:border-white/10;
+  }
+
+  .glass-button {
+    /* Trendy gradient + glassmorphism CTA */
+    @apply relative inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold text-white bg-gradient-to-r from-sky-500/90 via-indigo-500/90 to-violet-500/90 backdrop-blur-xl border border-white/25 shadow-[0_18px_45px_rgba(15, 23, 42, 0.55)] hover:shadow-[0_24px_65px_rgba(15, 23, 42, 0.75)] hover:translate-y-0.5 hover:brightness-110 dark:border-white/15 transition-all duration-200 ease-out;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(102, 126, 234, 0.1);
+    }
+
+    50% {
+      box-shadow: 0 0 30px rgba(102, 126, 234, 0.2);
+    }
+  }
+}
+
+/* Hide Vercel v0 dev tools overlay globally */
+[data-v0-dev-tool],
+#v0-dev-tool-btn,
+.v0-dev-tool,
+[class*="v0-dev-toolbar"],
+[id*="v0-dev-toolbar"],
+svg[class*="v0-dev-toolbar"],
+div[style*="z-index: 1000000"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
