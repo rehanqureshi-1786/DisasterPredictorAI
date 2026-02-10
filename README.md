@@ -1,6 +1,6 @@
 # DisasterPredict AI - Project Overview
 
-An AI-powered disaster prediction and weather monitoring dashboard built for real-time safety intelligence.
+An AI-driven web application for disaster risk prediction and geospatial analysis, designed as a research-oriented prototype.
 
 ## 🚀 Tech Stack
 
